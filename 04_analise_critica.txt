@@ -1,0 +1,9 @@
+ANALISE CRITICA - AGENDAMENTO DE SALAS COM AVL
+
+A solucao usa start_time como chave da AVL, armazena end_time e event_name e acrescenta height para recalcular o fator de balanceamento. As rotacoes LL, RR, LR e RL mantem a altura da arvore em O(log n).
+
+A verificacao de conflitos considera intervalos semiabertos [inicio, fim): duas reunioes podem se tocar no horario de troca sem conflito. Como a arvore so aceita agendamentos sem sobreposicao, a busca pode escolher uma unica subarvore por comparacao, com custo O(log n).
+
+Os testes devem contemplar inclusao valida, tentativa de conflito, consulta da agenda, entrada invalida e horarios consecutivos. A aplicacao roda em memoria e perde os agendamentos ao encerrar; para uso real, precisaria persistencia, controle de usuarios e suporte a multiplas salas.
+
+Numa BST simples, inserir chaves crescentes pode produzir uma cadeia de 100 nos, fazendo a busca percorrer ate O(n) elementos. Na AVL, as rotacoes evitam essa degeneracao e a altura permanece O(log n).
